@@ -4,17 +4,33 @@
 
     <head>
         <link rel="stylesheet" type="text/css" href="css/appstyle.css">
-
-        <script type="text/javascript" src="jslibs/raphael.js"></script>
-
-        <script type="text/javascript" data-main="appscripts/main.js" src="jslibs/require.js">
+        <script>
         </script>
     </head>
 
     <body>
-         <h3> I Want to Play a Game  </h3> 
-            <div id="mySVGCanvas" > </div>
+         <h3> Final Assignment Write Up  </h3> 
+         <center>
+            <div id="writeUp"> 
+            I created a simple game that require players to hit on the target (boogie) within 20 seconds. I chose this because it allows me to demostrate my knowlage on arrays, functions, mouse events, time intervals and many more.
+            <br><br>
+            The design of the game was really simple. I got most of the images online. I adapted the game to fit one of my favourite movies, "The Nightmare Before Christmas". At the end of the movie, the main antagonist, Oogit Boogie kidnapped Santa Claus and Jck, the protagonist had to save santa before Christmas ends. Therefore the game was design in the context where the player "helps" Jack save santa by attempting to "knock out" boogie.
+            <br><br>
+            Firstly, I would like to say that my initial idea was not exactly like this end result. I wanted to create a game similar to the "hit beaver game" like this one here: <a href="http://lolygames.com/preview-game/109. "></a> The initial idea was to hide the target for a random number of seconds when the target is hit and make the target reappear after that certain time. However, although I was able to hide the target ( I tried both boogie.hide() and changing the image fill to transparent), I was unable to make the target reappear. I tried calling boogie.show in a mouseup function but it did not work. This is probably because I added the boogie.hide() function within the mousedown event, mouseup event is invalid because target hides upon mousedown.
+            <br><br>
+            Therefore, instead of trying to hide the target upon mousedown, I increase the complexity if the game by creating an array of santas. The many santas will float around the canvas each with at a random rate and in random directions (I created random variables for xrate and yrate of santa). Players need to avoid hitting on the santa white trying to hit on boogie. When the player hits on a santa, a prompt message will appear informing the player that he has hit on the santa and the game has ended. Upon confirmation, the page reloads due to the location.reload() function embedded in the confirm function.
+            <br><br>
+            The game also has the time element. The setInterval of start function is set to 20 seconds. This means that as plays clicks on the start button, the game will start and will run for 20 second. Within this 20 second, players are expected to hit boogie 10 times. If he succeeds, the game ends and a prompt message appears telling the player that he has knocked out the target. If player failes to hit the boogie 10 times in 20 seconds, the game ends with a message telling the player that he did not manage to knock out boogie.
+            <br><br>
+            I also manipulated the difficulty of the game by adjusting the size and rate of boogie. When player selects the easy level, boogie will travel slower and his size is also bigger so that he is easier to click on.
+            <br><br>
+            I also encontered some obstacles creating the game. Other than trying to hide boogie upon mousedown (mentioned above). I also encontered problems trying to hide the array of santas. Initially, I wanted to hide santa when the endGame function is called so that the webpage reverts to it's original state. I tried putting santa[i].hide() within a while loop within the endgame function but realised that when the game ends and player click on the start button to replay the game, the array of santa is still "hiding". Therefore, to ensure that the game reverts back to its original state everything the game ends, I inserted the location.reload() function within endGame. 
+            <br><br>
+            All in all, I managed to finish this simple game. Most of the codes where taught in class so I managed to overcome most of the problems. However, I feel that given more time, I will like to improve on the design of the game and maybe explore more ways to increase the complexity of the game too.
 
+
+            </div>
+        </center>
     </body>
 </html>
 
